@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main() {
+  double y, x, numerator, denominator;
+
+  do {
+    printf("введіть y: ");
+    scanf("%lf", &y);
+
+    printf("введіть x: ");
+    scanf("%lf", &x);
+
+    if (denominator == 0) {
+      printf("«для заданих значень 'y' та 'z' у обчислюваному виразі виконується ділення на 0.\n");
+      continue;
+    }
+    break;
+  } while (true);
+
+numerator = pow(x, 2) + x * y - pow(y, 2);
+denominator = 1 + pow(x, 2) + pow(y, 2);
+  double result = numerator / denominator;
+
+  printf("результат функції: %lf\n", result);
+  return 0;
+}

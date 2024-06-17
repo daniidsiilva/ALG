@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+  double d1, d2, d3, d4;
+
+  printf("перше число: ");
+  scanf("%lf", &d1);
+
+  printf("друге число: ");
+  scanf("%lf", &d2);
+
+  printf("третє число: ");
+  scanf("%lf", &d3);
+
+  printf("четверте число: ");
+  scanf("%lf", &d4);
+
+  if (d1 <= d2 && d2 <= d3 && d3 <= d4) {
+    double arithmeticMean = (d1 + d2 + d3 + d4) / 4.0;
+    printf("утворюють неспадну послідовність\n");
+    printf("середнє арифметичне: %lf\n", arithmeticMean);
+  } else {
+    double geometricMean = pow(d1 * d2 * d3 * d4, 0.25);
+    printf("не утворюють неспадну послідовність\n");
+    printf("середнє геометричне: %lf\n", geometricMean);
+  }
+
+  return 0;
+}

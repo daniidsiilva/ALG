@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+#include <fenv.h>
+int main() {
+  double a = 0.0;
+  double b = M_PI;
+  double dx = M_PI/20;
+  feenableexcept(FE_DIVBYZERO | FE_INVALID);
+ 
+  printf("x\t\ty\n");
+  for (double x = a; x <= b + dx / 2; x += dx) {
+    if (cos(x) == 0) {
+      printf("Дотична не визначена в x = %lf.\n", x);
+      continue;
+    }
+    double y = pow(tan(x) + 13, 0.25);
+    printf("%lf\t\t%lf\n", x, y);
+  }
+  return 0;
+}

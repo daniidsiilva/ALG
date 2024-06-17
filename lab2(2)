@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main() {
+    double a = 25;
+    double b = -2;
+    double c = 4;
+    double y = (a * b * c + a * b * (2 * a + c)) / (2 * a * (b - c) * 5);
+    printf("значення функції у: %f\n", y);
+
+    return 0;
+}

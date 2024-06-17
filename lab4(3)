@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+  int n, i, j;
+  double x, sum = 0.0;
+
+  while (1) {
+    printf("Вставте натуральне число n: ");
+    if (scanf("%d", &n) != 1 || n <= 0) {
+      printf("Помилка: n має бути натуральним числом.\n");
+      while (getchar() != '\n');
+      continue;
+    }
+
+    printf("Вставте дійсне число x: ");
+    if (scanf("%lf", &x) != 1) {
+      printf("Помилка: x має бути дійсним числом.\n");
+      while (getchar() != '\n');
+      continue;
+    }
+    break;
+  }
+  for (i = 1; i <= n; i++) {
+    for (j = i; j <= 5; j++) {
+      sum += (x + 2 * i) / (double)j; 
+    }
+  }
+
+  printf("Відповідь: %lf\n", sum);
+
+  return 0;
+}

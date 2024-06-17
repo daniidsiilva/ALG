@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int n, i, j, alternating = 1, negativeCount = 0;
+    printf("Введіть розмір масиву: ");
+    scanf("%d", &n);
+    double a[n], c[n];
+    printf("Введіть елементи масиву:\n");
+    for (i = 0; i < n; i++) {
+        scanf("%lf", &a[i]);
+    }
+    for (i = 1; i < n; i++) {
+        if ((a[i] >= 0 && a[i - 1] >= 0) || (a[i] < 0 && a[i - 1] < 0)) {
+            alternating = 0;
+            break;
+        }
+    }
+    if (alternating) {
+        printf("Елементи масиву чергуються. Початковий масив:\n");
+        for (i = 0; i < n; i++) {
+            printf("%.2lf ", a[i]);
+        }
+    } else {
+        for (i = 0; i < n; i++) {
+            if (a[i] < 0) {
+                negativeCount++;
+            }
+        }
+        j = 0;
+        for (i = 0; i < n; i++) {
+            if (a[i] < 0) {
+                c[j++] = a[i];
+            }
+        }
+        printf("Новий масив з від'ємних елементів:\n");
+        for (i = 0; i < negativeCount; i++) {
+            printf("%.2lf ", c[i]);
+        }
+    }
+    printf("\n");
+    return 0;
+}

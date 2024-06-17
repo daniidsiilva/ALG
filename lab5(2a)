@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+  int n, i, lastNegativeIndex = -1;
+  long long int product = 1;  
+  printf("Введіть розмір масиву: ");
+  scanf("%d", &n);
+  int arr[n];
+  printf("Введіть елементи масиву:\n");
+  for (i = 0; i < n; i++) {
+    scanf("%d", &arr[i]);
+  }
+  int sumA = 0;
+  long long int productA = 1;
+  for (i = 0; i < n; i++) {
+    if (arr[i] < 0) {
+      sumA += abs(arr[i]); 
+      lastNegativeIndex = i;
+    }
+    if (i < lastNegativeIndex) {
+      productA *= arr[i];
+    }
+  }
+  printf("Сума від'ємних елементів: %d\n", sumA);
+  if (lastNegativeIndex != -1) {
+    printf("Добуток до останнього від'ємного: %lld\n", productA);
+  } else {
+    printf("Немає від'ємних елементів.\n");
+  }
+    return 0;
+  }

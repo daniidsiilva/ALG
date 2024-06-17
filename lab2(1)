@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    printf("введіть перше ціле число: ");
+    scanf("%d", &num1);
+    printf("введіть друге ціле число: ");
+    scanf("%d", &num2);
+    printf("\nрезультати обчислень:\n");
+    printf("залишок від ділення %d на %d: %d\n", num1, num2, num1 % num2);
+    printf("ціла частина від ділення %d на %d: %d\n", num2, num1, num2 / num1);
+    printf("потроєна сума чисел %d та %d: %d\n", num1, num2, (num1 + num2) * 3);
+    return 0;
+}
